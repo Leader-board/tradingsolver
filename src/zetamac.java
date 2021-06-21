@@ -6,8 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.script.ScriptException;
 
-import java.util.concurrent.TimeUnit;
-
+import java.io.File;
 import static java.lang.Thread.sleep;
 
 public class zetamac {
@@ -15,10 +14,12 @@ public class zetamac {
 //    static ScriptEngineManager manager = new ScriptEngineManager();
 //    static ScriptEngine engine = manager.getEngineByName("js");
     public static void zetamac_selenium() throws InterruptedException {
-        // System.setProperty("webdriver.chrome.driver", new File("").getAbsolutePath().concat("/chromedriver"));
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+        // linux
+        System.setProperty("webdriver.chrome.driver", new File("").getAbsolutePath().concat("/chromedriver"));
+        // windows
+       // System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        // options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("window-size=1600x2400");
         //Initiating your chromedriver
         WebDriver driver = new ChromeDriver(options);
